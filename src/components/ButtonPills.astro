@@ -1,0 +1,126 @@
+<button {...Astro.props} id="copyButton" type="button" class="copy rounded-full border border-white/10 flex justify-center items-center gap-x-2 py-1 px-4 md:py-2 md:px-4 text-xs md:text-base bg-white/5 hover:scale-105 hover:bg-white/10 transition">
+    <span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="tooltip"></span>
+        <slot />
+  </button>
+  
+<style>
+.copy {
+  /* tooltip */
+  --tooltip-bg: #f4f3f3;
+  --toolptip-border-radius: 4px;
+  --tooltip-font-family: Menlo, Roboto Mono, monospace;
+  /* 👆 this field should not be empty */
+  --tooltip-font-size: 12px;
+  /* 👆 this field should not be empty */
+  --tootip-text-color: rgb(50, 50, 50);
+  --tooltip-padding-x: 7px;
+  --tooltip-padding-y: 7px;
+  --tooltip-offset: 8px;
+  --tooltip-transition-duration: 0.3s;
+  /* 👆 if you need a transition,
+  just remove the comment,
+  but I didn't like the transition :| */
+}
+
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font: var(--tooltip-font-size) var(--tooltip-font-family);
+  color: var(--tootip-text-color);
+  background: var(--tooltip-bg);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--toolptip-border-radius);
+  pointer-events: none;
+  transition: all var(--tooltip-transition-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+  width: var(--tooltip-padding-y);
+  height: var(--tooltip-padding-y);
+  background: inherit;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -999;
+  pointer-events: none;
+}
+
+/* actions */
+
+.copy:hover .tooltip,
+.copy:focus:not(:focus-visible) .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.copy:focus:not(:focus-visible) .tooltip::before {
+  content: attr(data-text-end);
+}
+
+.copy:focus:not(:focus-visible) .clipboard {
+  display: none;
+}
+
+.copy:focus:not(:focus-visible) .checkmark {
+  display: block;
+}
+
+.copy:hover,
+.copy:focus {
+  background-color: var(--button-hover-bg);
+}
+
+.copy:active {
+  outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+
+.copy:hover svg {
+  color: var(--button-hover-text-color);
+}
+
+button:hover {
+    outline: none;
+    border-color: rgba(129, 140, 248);
+    box-shadow: 0 0 0 5px rgb(168 85 247 / 0.9 / 10%);
+}
+
+</style>
+
+<script>
+    var copyTimeout;
+  
+    document.getElementById('copyButton').addEventListener('mousedown', function() {
+      var emailToCopy = "davidvillard6@gmail.com";
+  
+      var tempInput = document.createElement('input');
+      tempInput.value = emailToCopy;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+  
+      clearTimeout(copyTimeout); // Limpiar cualquier tiempo de espera previo
+      copyTimeout = setTimeout(function() {
+        // Establecer un tiempo de espera antes de borrar el texto del tooltip
+        document.querySelector('.copy .tooltip').innerText = '';
+      }, 1500);
+    });
+  
+    document.getElementById('copyButton').addEventListener('mouseup', function() {
+      // Limpiar cualquier tiempo de espera al soltar el botón
+      clearTimeout(copyTimeout);
+    });
+  </script>

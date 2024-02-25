@@ -30,7 +30,7 @@ import Footer from "../components/Footer.astro";
     >
     </div> -->
     <!-- <div class="absolute bottom-0 left-0 right-0 top-0 z-[-2] bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div> -->
-    <div class="absolute bottom-0 left-0 right-0 top-0 z-[-2] bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_50%_40%_at_50%_0%,#000_40%,transparent_100%)]"></div>
+     <div class="absolute bottom-0 left-0 right-0 top-0 z-[-2] bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_50%_40%_at_50%_0%,#000_40%,transparent_100%)]"></div>
     <Header />
     <slot />
     <Footer />
@@ -53,6 +53,8 @@ import Footer from "../components/Footer.astro";
 	  flex-direction: column;
     min-height: 100vh;
   }
+
+  
 
   /* Si el usuario tiene desactivado las animaciones, no hace la animacion */
   @media (prefers-reduce-motion: reduce) {

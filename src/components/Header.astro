@@ -1,5 +1,5 @@
 <header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <nav class="flex flex-row gap-x-10 text-xs lg:text-base opacity-80">
+  <nav class="flex flex-row gap-x-10 text-xs lg:text-base opacity-100 ">
     <a href="#top">Inicio</a>
     <a href="#experiencia">Experiencia</a>
     <a href="#proyectos">Proyectos</a>
@@ -7,3 +7,22 @@
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
+
+<style>
+
+  header nav a::before {
+   content: "";
+  }
+
+  header nav a {
+    @apply relative px-2 py-2 transition;
+  }
+
+  header nav a::before {
+    @apply absolute inset-0  bg-purple-500 border-2 border-solid border-purple-500 rounded-full transition-transform transform scale-0 z-[-1] ;
+  }
+
+  header nav a:hover::before {
+    @apply scale-100;
+  }
+</style>
