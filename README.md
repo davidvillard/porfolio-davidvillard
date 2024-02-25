@@ -1,7 +1,3 @@
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-
-  <div style="max-width: 600px; margin: auto;">
-
 # Porfolio Personal
 
 ![Portfolio Image](https://github.com/davidvillard/portfolio/assets/78448326/6c0a27ae-9075-4eed-9e68-9da3c2d82355)
@@ -27,6 +23,3 @@ All commands are run from the root of the project, from a terminal:
 - Edit layout and styles more convenient for the web site
 - Add all missing projects and sections
 
-  </div>
-
-</div>
