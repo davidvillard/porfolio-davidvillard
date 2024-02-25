@@ -2,30 +2,30 @@
 
   <div style="max-width: 600px; margin: auto;">
 
-    # Porfolio Personal
+# Porfolio Personal
 
-    ![Portfolio Image](https://github.com/davidvillard/portfolio/assets/78448326/6c0a27ae-9075-4eed-9e68-9da3c2d82355)
+![Portfolio Image](https://github.com/davidvillard/portfolio/assets/78448326/6c0a27ae-9075-4eed-9e68-9da3c2d82355)
 
-    ## 🧞 Commands
+## 🧞 Commands
 
-    All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project, from a terminal:
 
-    | Command                   | Action                                           |
-    | :------------------------ | :----------------------------------------------- |
-    | `npm install`             | Installs dependencies                            |
-    | `npm run dev`             | Starts local dev server at `localhost:4321`      |
-    | `npm run build`           | Build your production site to `./dist/`          |
-    | `npm run preview`         | Preview your build locally, before deploying     |
-    | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-    | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 
-    ## Issues
+## Issues
 
-    - Fix ("bug")? of SocialPills
-    - Improve UI design 
-    - Edit layout and styles more convenient for the web site
-    - Add all missing projects and sections
+- Fix ("bug")? of SocialPills
+-  Improve UI design 
+- Edit layout and styles more convenient for the web site
+- Add all missing projects and sections
 
   </div>
 
