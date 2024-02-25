@@ -1,0 +1,48 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = {
+  title: "Experience",
+  items: [
+    {
+      date: "Actualmente...",
+      title: "Cursando Desarrollo de Aplicaciones Web",
+      description: [
+        "En la actualidad me encuentro cursando el ciclo formativo de grado superior de Desarrollo de Aplicaciones Web en el IES De Teis, Vigo.",
+
+        "En este ciclo formativo he aprendido a desarrollar aplicaciones web, tanto en el lado del cliente como en el servidor, utilizando tecnologías como HTML, CSS, JavaScript, PHP, MySQL, Java, Docker, Vue, Bootstrap etc. En el proyecto de fin de curso amplié mis habilidades al trabajar con tecnologias como React, utilizando Vite como bundler, React Router para la navegación y Tailwind junto con otras dependencias esenciales. Por otro lado, he aprendido a utilizar herramientas de control de versiones como Git.",
+
+        "También he desarrollado competencias en el uso de sistemas operativos, particularmente en Ubuntu. Esta habilidad no solo amplía mis conocimientos técnicos, sino que también demuestra mi versatilidad en entornos tecnológicos diversos.",
+
+        "Además del desarrollo de aplicaciones, nos hemos introducido en el montaje de hardware y gestión de sistemas informáticos, especialmente con Ubuntu. Esta perspectiva amplía mi comprensión tecnológica, preparándome para abordar proyectos desde diversas perspectivas.",
+      ],
+      link: "https://www.github.com/davidvillard",
+    },
+    // {
+    //   date: "March 2022",
+    //   title: "Marketing UI design in Figma",
+    //   description:
+    //     "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+    //   link: "#",
+    // },
+    // {
+    //   date: "April 2022",
+    //   title: "E-Commerce UI code in Tailwind CSS",
+    //   description:
+    //     "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
+    //   link: "#",
+    // },
+    // Puedes agregar más items según sea necesario
+  ],
+};
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.items.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} description={Array.isArray(experience.description) ? experience.description : [experience.description]} />
+      </li>
+    ))
+  }
+</ol>
