@@ -1,6 +1,6 @@
 # Portfolio Personal
 
-![Caaptura](https://github.com/davidvillard/portfolio/assets/78448326/f64bc68e-6874-4190-9356-24dce758a8e5)
+![100shots_so](https://github.com/davidvillard/portfolio/assets/78448326/6c0a27ae-9075-4eed-9e68-9da3c2d82355)
 
 # Astro Starter Kit: Basics
 
