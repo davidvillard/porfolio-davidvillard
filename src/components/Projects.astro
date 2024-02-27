@@ -1,7 +1,10 @@
 ---
 import HTML from "./icons/HTML.astro";
 import CSS from "./icons/CSS.astro";
-import JavaScript from "./icons/JavaScript.astro";
+import JavaScript from "./icons/JavaScript.astro"
+import React from "./icons/React.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import PHP from "./icons/PHP.astro"
 
 const TAGS = {
   HTML: {
@@ -19,11 +22,26 @@ const TAGS = {
     class: "bg-yellow-400/30 text-white",
     icon: JavaScript,
   },
+  REACT: {
+    name: "React",
+    class: "bg-blue-400/30 text-white",
+    icon: React,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-cyan-400/30 text-white",
+    icon: Tailwind,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-indigo-500/30 text-white",
+    icon: PHP,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Interstellar Fan Page - Webiste Project",
+    title: "Interstellar Fan Page - Website Project",
     description:
       "This is a fan page dedicated to the movie Interstellar. It was created as part of a project for an advanced web design course focused on Responsive Web Design. The website features multiple pages and boasts a responsive design tailored to different screen sizes.",
     link: "https://davidvillard.github.io/First-WebSite-Project-Responsive/v01/src/html/home.html",
@@ -31,13 +49,22 @@ const PROJECTS = [
     image: "/projects/svgl.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
+  {
+    title: "Schedule and Module Management for Teachers",
+    description:
+      "The main objective of the project is to optimize the management of schedules and modules for teachers, providing them with an intuitive and efficient platform to create and consult their official schedules. The application will allow teachers to customize their schedules according to their preferences and academic responsibilities, considering their teaching workload and the various modules they instruct.",
+    link: "https://github.com/sempereluismi/modular",
+    github: "https://github.com/sempereluismi/modular",
+    image: "/projects/modular.webp",
+    tags: [TAGS.REACT, TAGS.PHP, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
 ];
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-purple-500 mb-2">{title}</h3>
+  PROJECTS.map(({ image, title, description, tags }, index) => (
+    <article class={`mb-52 last:mb-20`}>
+      <h3 class="text-3xl font-semibold text-yellow-200/80 mb-2">{title}</h3>
       <p class="text-base mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
         {tags.map((tag) => (
@@ -52,8 +79,10 @@ const PROJECTS = [
       <img
         class="rounded shadow-2xl shadow-white/10"
         src={image}
-        alt={`Captura de pantalla del pryecto ${image}`}
+        alt={`Captura de pantalla del proyecto ${image}`}
       />
     </article>
   ))
 }
+
+
