@@ -1,28 +1,36 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <nav class="flex flex-row gap-x-10 text-xs lg:text-base opacity-100 ">
-    <a href="#top">Inicio</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contacto</a>
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="flex px-3 rounded-full flex-row gap-x-10 text-xs lg:text-base opacity-100">
+    <a href="#top" class="hover:text-purple-400/90 transition">Inicio</a>
+    <a href="#experiencia" class="hover:text-purple-400/90 transition">Experiencia</a>
+    <a href="#proyectos" class="hover:text-purple-400/90 transition">Proyectos</a>
+    <a href="#sobre-mi" class="hover:text-purple-400/90 transition">Sobre mí</a>
+    <a href="#contacto" class="hover:text-purple-400/90 transition">Contacto</a>
   </nav>
 </header>
 
 <style>
 
-  header nav a::before {
-   content: "";
-  }
-
   header nav a {
-    @apply relative px-2 py-2 transition;
+    @apply relative px-2 py-2;
   }
 
-  header nav a::before {
-    @apply absolute inset-0  bg-purple-500 border-2 border-solid border-purple-500 rounded-full transition-transform transform scale-0 z-[-1] ;
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
   }
 
-  header nav a:hover::before {
-    @apply scale-100;
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-slate-950/50 ring-white/10;
+    }
+  }
+
+  @scroll: {
+    header {
+      nav {
+        @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-slate-950/50 ring-white/10;
+      }
+    }
   }
 </style>
