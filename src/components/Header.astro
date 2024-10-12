@@ -6,7 +6,7 @@
       </svg>
     </button>
   </div>
-  <nav id="menu" class="hidden lg:flex px-3 py-2 lg:py-0 lg:px-3 ml-5 md:ml-40 md:text-sm lg:ml-0 flex-col rounded-full lg:flex-row gap-x-10 text-[12px] lg:text-base opacity-100">
+  <nav id="menu" class="hidden lg:flex px-3 py-2 lg:py-0 lg:px-3 ml-5 md:ml-40 lg:ml-0 flex-col rounded-full lg:flex-row gap-x-10 text-[12px] md:text-base lg:text-lg opacity-100">
     <a href="#top" class="hover:text-purple-400/90 transition">Inicio</a>
     <a href="#experiencia" class="hover:text-purple-400/90 transition">Experiencia</a>
     <a href="#proyectos" class="hover:text-purple-400/90 transition">Proyectos</a>
@@ -42,8 +42,11 @@
 </style>
 
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('hidden');
-  });
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  if (menuToggle && menu) {
+    menuToggle.addEventListener('click', function() {
+      menu.classList.toggle('hidden');
+    });
+  }
 </script>
