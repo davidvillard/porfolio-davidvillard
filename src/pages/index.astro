@@ -14,6 +14,8 @@ import ButtonPills from "../components/ButtonPills.astro";
 import CopyIcon from "../components/icons/Copy.astro";
 import Skills from "../components/Skills.astro";
 import SkillsIcon from "../components/icons/SkillsIcon.astro";
+import UserIcon from "../components/icons/UserIcon.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout
@@ -21,10 +23,10 @@ import SkillsIcon from "../components/icons/SkillsIcon.astro";
   description="Contrata a davidvillard."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32" id="contacto">
+    <SectionContainer class="py-44 pb-32" id="top">
       <img
-        class="rounded-full w-14 h-14 mb-4"
-        src="favicon.svg"
+        class="rounded-full w-20 h-20 mb-4"
+        src="/profile-pic.JPG"
         alt="david photo"
       />
       <h1
@@ -50,7 +52,7 @@ import SkillsIcon from "../components/icons/SkillsIcon.astro";
           <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="/">
+        <SocialPill href="https://www.linkedin.com/in/david-villar-duran-109b0a2b4/">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
@@ -80,6 +82,14 @@ import SkillsIcon from "../components/icons/SkillsIcon.astro";
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+        <UserIcon class="size-7" />
+        Sobre Mí
+      </h2>
+      <AboutMe />
     </SectionContainer>
 
     <SectionContainer id="skills">

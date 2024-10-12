@@ -5,6 +5,8 @@ import JavaScript from "./icons/JavaScript.astro"
 import React from "./icons/React.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import PHP from "./icons/PHP.astro"
+import GitHubIcon from "../components/icons/GitHub.astro";
+import SocialPill from "../components/SocialPill.astro";
 
 const TAGS = {
   HTML: {
@@ -44,8 +46,8 @@ const PROJECTS = [
     title: "Interstellar Fan Page - Proyecto Web",
     description:
       "Esta es una Fan Page dedicada a la película Interstellar. Fue creada como parte de un proyecto para el ciclo superior de diseño web centrado en el Diseño Web Responsive. El sitio web cuenta con varias páginas y presume de un diseño responsive adaptado a diferentes tamaños de pantalla.",
-    link: "https://davidvillard.github.io/First-WebSite-Project-Responsive/v01/src/html/home.html",
-    github: "https://github.com/davidvillard/First-WebSite-Project-Responsive",
+    link: "https://interstellarfanpage.netlify.app",
+    github: "https://github.com/davidvillard/Interstellar",
     image: "/projects/svgl.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
@@ -62,10 +64,11 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }, index) => (
-    <article class={`mb-52 last:mb-20`}>
-      <h3 class="text-3xl font-semibold text-yellow-200/80 mb-2">{title}</h3>
-      <p class="text-base mb-4 text-pretty">{description}</p>
+  PROJECTS.map(({ image, title, link, github, description, tags }, index) => (
+    <article class={`mb-52 last:mb-20 mt-12`}>
+      <a href={link}><h3 class="text-3xl font-semibold text-yellow-200/80 mb-6">{title}</h3></a>
+      <p class="text-base mb-6 text-pretty">{description}</p>
+      <div class="flex justify-between items-center mb-4">
       <ul class="flex gap-x-2 flex-row mb-2">
         {tags.map((tag) => (
           <li>
@@ -76,6 +79,14 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
+
+      <div class="flex-shrink-0 mb-2">
+          <SocialPill href={github}>
+            <GitHubIcon class="size-4" />
+          </SocialPill>
+        </div>
+
+        </div>
       <img
         class="rounded shadow-2xl shadow-white/10"
         src={image}
@@ -84,5 +95,4 @@ const PROJECTS = [
     </article>
   ))
 }
-
 
