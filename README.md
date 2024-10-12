@@ -1,6 +1,6 @@
 # Portfolio Personal
 
-![100shots_so]([https://github.com/davidvillard/porfolio-davidvillard/public/projects/svgl.webp](https://raw.githubusercontent.com/davidvillard/porfolio-davidvillard/refs/heads/main/public/projects/svgl.webp))
+![100shots_so](https://raw.githubusercontent.com/davidvillard/porfolio-davidvillard/refs/heads/main/public/projects/svgl.webp)
 
 ## 🧞 Commands
 
