@@ -1,4 +1,4 @@
-# Portfolio - [Tu Nombre]
+# Portfolio - David Villar Durán
 
 Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como desarrollador web. Este proyecto fue creado con **Astro** y **Tailwind CSS**, y también incluye algo de **JavaScript**. El portafolio es totalmente responsive y refleja mi aprendizaje continuo en tecnologías web.
 
@@ -11,7 +11,7 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 ### Tecnologías Utilizadas
 
 - **Astro**: Framework estático rápido y optimizado.
-- **Tailwind CSS**: Estilos modulares para un diseño rápido y personalizado.
+- **Tailwind CSS**: Estilos para un diseño rápido y personalizado.
 - **JavaScript**: Para la funcionalidad interactiva en el sitio.
 - **HTML5** y **CSS3**: Estructura y presentación del contenido.
   
@@ -19,7 +19,7 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 
 - **Responsive Design**: Totalmente adaptable a dispositivos móviles, tabletas y desktops.
 - **Optimización de rendimiento**: Aprovechando el enfoque estático de Astro para tiempos de carga rápidos.
-- **Tailwind CSS**: Diseño eficiente y escalable con estilos utilitarios.
+- **Tailwind CSS**: Diseño eficiente y escalable.
 - **Interactividad**: Uso de JavaScript para pequeñas interacciones y dinámicas en el sitio.
 
 ## 🌱 Lo que aprendí
@@ -28,14 +28,10 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 - **Tailwind CSS**: Cómo crear un diseño completamente responsive de manera rápida y eficiente.
 - **Desarrollo Frontend**: Fortalecimiento de habilidades en HTML, CSS y JavaScript.
 
-## Próximos Pasos
-
-- Seguir mejorando el portafolio con nuevas funcionalidades y optimizaciones.
-- Continuar mi aprendizaje en **ciberseguridad** y explorando otras tecnologías web como **React** y **Next.js**.
-
 ## 📬 Contacto
 
-Si te gustaría conocer más sobre mí o colaborar en algún proyecto, puedes contactarme a través de [tu correo electrónico] o [enlace a tus redes sociales].
+Si te gustaría conocer más sobre mí o colaborar en algún proyecto, puedes contactarme a través de [Email](mailto:davidvillard6@gmail.com)
+ o [LinkedIn](https://www.linkedin.com/in/davidvillard/), [Instagram](https://www.instagram.com/davidvillardd/).
 
 
 ## 🧞 Commands
