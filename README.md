@@ -2,7 +2,7 @@
 
 Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como desarrollador web. Este proyecto fue creado con **Astro** y **Tailwind CSS**, y también incluye algo de **JavaScript**. El portafolio es totalmente responsive y refleja mi aprendizaje continuo en tecnologías web.
 
-![100shots_so](https://github.com/davidvillard/portfolio/assets/78448326/6c0a27ae-9075-4eed-9e68-9da3c2d82355)
+![100shots_so](https://raw.githubusercontent.com/davidvillard/porfolio-davidvillard/refs/heads/main/public/projects/svgl.webp)
 
 ## 📋 Descripción
 
