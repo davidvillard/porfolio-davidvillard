@@ -1,12 +1,6 @@
-<header class="fixed top-0 z-10 flex items-center lg:justify-center w-full mx-auto mt-2 px-4">
-  <div class="flex items-center">
-    <button id="menu-toggle" class="lg:hidden p-2 focus:outline-none rounded-full w-full">
-      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </button>
-  </div>
-  <nav id="menu" class="hidden lg:flex px-3 py-2 lg:py-0 lg:px-3 ml-5 md:ml-40 lg:ml-0 flex-col rounded-full lg:flex-row gap-x-10 text-[12px] md:text-base lg:text-lg opacity-100">
+<!-- Header para desktop y tablet -->
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-4 lg:flex">
+  <nav id="menu" class="hidden lg:flex px-3 py-2 lg:py-0 lg:px-3 flex-col rounded-full lg:flex-row gap-x-10 text-[12px] md:text-base lg:text-lg opacity-100">
     <a href="#top" class="hover:text-purple-400/90 transition">Inicio</a>
     <a href="#experiencia" class="hover:text-purple-400/90 transition">Experiencia</a>
     <a href="#proyectos" class="hover:text-purple-400/90 transition">Proyectos</a>
@@ -15,18 +9,37 @@
   </nav>
 </header>
 
+<!-- Header para móvil -->
+<header class="fixed top-0 z-10 w-full shadow-md lg:hidden">
+  <div class="flex items-center justify-between p-4 backdrop-blur">
+    <!-- Botón de menú para móviles -->
+    <button id="mobile-menu-toggle" class="p-2 focus:outline-none rounded-full">
+      <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="hidden flex-col p-4 rounded-lg absolute top-full left-0 right-0 mt-2 shadow-lg z-20 backdrop-blur">
+    <a href="#top" class="block py-2 hover:text-purple-400/90 transition">Inicio</a>
+    <a href="#experiencia" class="block py-2 hover:text-purple-400/90 transition">Experiencia</a>
+    <a href="#proyectos" class="block py-2 hover:text-purple-400/90 transition">Proyectos</a>
+    <a href="#sobre-mi" class="block py-2 hover:text-purple-400/90 transition">Sobre mí</a>
+    <a href="#skills" class="block py-2 hover:text-purple-400/90 transition">Skills</a>
+  </nav>
+</header>
+
 <style>
   header nav a {
     @apply relative px-2 py-2;
   }
 
-  nav, button {
-    animation: nav-shadown 1s linear both;
+  nav {
+    animation: nav-shadow 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
 
-  @keyframes nav-shadown {
+  @keyframes nav-shadow {
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-slate-950/50 ring-white/10;
     }
@@ -42,11 +55,23 @@
 </style>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  if (menuToggle && menu) {
-    menuToggle.addEventListener('click', function() {
-      menu.classList.toggle('hidden');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden'); // Alterna la visibilidad del menú
+
+      // Cambia el icono al hacer clic
+      if (menuIcon) {
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>'; // Icono de menú
+        } else {
+          menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'; // Icono de "X"
+        }
+      }
     });
   }
 </script>
+
