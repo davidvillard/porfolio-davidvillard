@@ -32,6 +32,8 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 
 Este portafolio ha sido desplegado en **Netlify**, lo que permite un acceso rápido y fácil a la versión en línea. Netlify ofrece una integración continua y despliegue automático cada vez que realizo cambios en el repositorio.
 <br>
+<br>
+<br>
 ## 📬 Contacto
 
 Si te gustaría conocer más sobre mí o colaborar en algún proyecto, puedes contactarme a través de [Email](mailto:davidvillard6@gmail.com)
