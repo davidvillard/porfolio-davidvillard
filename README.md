@@ -28,7 +28,8 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 - **Tailwind CSS**: Diseño eficiente y escalable.
 - **Interactividad**: Uso de JavaScript para pequeñas interacciones y dinámicas en el sitio.
 
-
+<br>
+<br>
 
 ## 🌱 Lo que aprendí
 
