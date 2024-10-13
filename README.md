@@ -14,8 +14,7 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 <br>
 <br>
 
-### ![image](https://github.com/user-attachments/assets/1c6e003b-13e9-4065-acac-693f8897b5b0)
- Tecnologías Utilizadas
+### Tecnologías Utilizadas
 
 - **Astro**: Framework estático rápido y optimizado.
 - **Tailwind CSS**: Estilos para un diseño rápido y personalizado.
