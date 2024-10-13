@@ -31,7 +31,7 @@ Este portafolio está diseñado para destacar mi experiencia y proyectos en desa
 ## 📬 Contacto
 
 Si te gustaría conocer más sobre mí o colaborar en algún proyecto, puedes contactarme a través de [Email](mailto:davidvillard6@gmail.com)
- o [LinkedIn](https://www.linkedin.com/in/davidvillard/), [Instagram](https://www.instagram.com/davidvillardd/).
+ o [LinkedIn](https://www.linkedin.com/in/davidvillard/) y [Instagram](https://www.instagram.com/davidvillardd/).
 
 
 ## 🧞 Commands
