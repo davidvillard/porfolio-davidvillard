@@ -5,29 +5,37 @@ const EXPERIENCE = {
   title: "Experience",
   items: [
     {
-      date: "Actualmente...",
+      date: "| sept. 2022 - sept. 2024",
       title: "Desenvolvimiento de Aplicaciones Web",
       description: [
-        "En la actualidad me encuentro cursando el ciclo formativo de grado superior de Desarrollo de Aplicaciones Web en el IES De Teis, Vigo.",
-
-        "En este ciclo formativo he aprendido a desarrollar aplicaciones web, tanto en el lado del cliente como en el servidor, utilizando tecnologías como HTML, CSS, JavaScript, PHP, MySQL, Java, Docker, Vue, Bootstrap etc. En el proyecto de fin de curso amplié mis habilidades al trabajar con tecnologias como React, utilizando Vite como bundler, React Router para la navegación y Tailwind junto con otras dependencias esenciales. Por otro lado, he aprendido a utilizar herramientas de control de versiones como Git.",
-
+        "En este ciclo formativo he aprendido a desarrollar aplicaciones web, tanto en el lado del cliente como en el servidor, utilizando tecnologías como HTML, CSS, JavaScript, PHP, MySQL, Java, Docker, Vue, Tailwind, etc. En el proyecto de fin de curso amplié mis habilidades al trabajar con tecnologías como React, utilizando Vite como bundler, React Router para la navegación y Tailwind junto con otras dependencias esenciales. Por otro lado, he aprendido a utilizar herramientas de control de versiones como Git.",
         "También he desarrollado competencias en el uso de sistemas operativos, particularmente en Ubuntu. Esta habilidad no solo amplía mis conocimientos técnicos, sino que también demuestra mi versatilidad en entornos tecnológicos diversos.",
-
-        "Además del desarrollo de aplicaciones, nos hemos introducido en el montaje de hardware y gestión de sistemas informáticos, especialmente con Ubuntu. Esta perspectiva amplía mi comprensión tecnológica, preparándome para abordar proyectos desde diversas perspectivas.",
+        "Además del desarrollo de aplicaciones, me he introducido en el montaje de hardware y gestión de sistemas informáticos, especialmente con Ubuntu.",
       ],
-      link: "https://www.github.com/davidvillard",
+      link: "https://www.linkedin.com/in/davidvillard",
+    },
+    {
+      date: "| sept. 2024 - Actualmente",
+      title: "Prácticas Gyleven",
+      description: [
+        "Durante mis prácticas en Gyleven, trabajé en proyectos variados que me permitieron crecer como desarrollador web. Diseñé y maqueté webs responsive con WordPress y WPBakery, como la página de la Banda Cultural de Salceda, y aprendí a crear diseños y prototipos con Figma. También participé en el desarrollo de una API en Django y Django Rest Framework para validar SMS, correos, teléfonos y URLs, integrando llamadas a otras APIs y gestionando errores.",
+        "Además, manejé bases de datos con phpMyAdmin y pgAdmin, y mejoré mis habilidades para resolver problemas técnicos de forma autónoma. Estas experiencias me dieron una visión práctica y completa del desarrollo web, desde el diseño hasta el backend.",
+      ],
+      link: "https://www.linkedin.com/in/davidvillard",
     },
   ],
 };
 ---
 
 <ol class="relative ml-[-39px]">
-  {
-    EXPERIENCE.items.map((experience) => (
-      <li class="mb-10 ms-4">
-        <ExperienceItem {...experience} description={Array.isArray(experience.description) ? experience.description : [experience.description]} />
-      </li>
-    ))
-  }
+  {EXPERIENCE.items.map((experience) => (
+    <li class="ms-4">
+      <ExperienceItem
+        title={experience.title}
+        description={experience.description}
+        link={experience.link}
+        date={experience.date}
+      />
+    </li>
+  ))}
 </ol>
