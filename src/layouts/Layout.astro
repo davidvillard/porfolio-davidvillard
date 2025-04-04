@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -21,8 +21,13 @@ import Footer from "../components/Footer.astro";
     <title>{title}</title>
   </head>
 
-  <body class="relative text-black dark:text-white">
-     <div class="absolute bottom-0 left-0 right-0 top-0 z-[-2] bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_50%_40%_at_50%_0%,#000_40%,transparent_100%)]"></div>
+  <body class="relative">
+    <!-- Fondo para modo claro -->
+    <div class="absolute inset-0 z-[-2] bg-white dark:bg-black">
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] dark:[mask-image:radial-gradient(ellipse_50%_40%_at_50%_0%,#000_40%,transparent_100%)] [mask-image:radial-gradient(ellipse_80%_20%_at_50%_0%,#000_70%,transparent_100%)]">
+      </div>
+    </div>
+
     <Header />
     <slot />
     <Footer />
@@ -33,22 +38,20 @@ import Footer from "../components/Footer.astro";
   :root {
     color-scheme: light dark;
   }
+
   html {
-    background:;
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
   }
 
-  body {
-    background: #050505;
-    display: flex;
-	  flex-direction: column;
-    min-height: 100vh;
+  /* Estilos para modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #050505;
+    }
   }
 
-  
-
-  /* Si el usuario tiene desactivado las animaciones, no hace la animacion */
+  /* Si el usuario tiene desactivado las animaciones, no hace la animación */
   @media (prefers-reduce-motion: reduce) {
     html {
       scroll-behavior: auto;
