@@ -30,24 +30,24 @@ import AboutMe from "../components/AboutMe.astro";
         alt="david photo"
       />
       <h1
-        class="flex flex-row justify-center pb-6 text-3xl font-bold text-white lg:text-5xl md:text-4xl gap-x-4 lg:pb-10"
+        class="flex flex-row justify-center pb-6 text-3xl font-bold dark:text-white text-black lg:text-5xl md:text-4xl gap-x-4 lg:pb-10"
       >
         Hola!, soy David <a
           href="https://www.linkedin.com/in/davidvillard/"
         ><div class="flex items-center justify-center">
-          <Badge>Disponible para trabajar</Badge>
+          <!-- <Badge>Disponible para trabajar</Badge> -->
         </div></a>
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span class="text-white"> Apasionado por el Diseño Web en Formación.</span>
-        <span class="flex items-center text-yellow-200/90">
+        <span class="dark:text-white text-black"> Apasionado por el Diseño Web en Formación.</span>
+        <span class="flex items-center dark:text-yellow-200/90 text-yellow-600/90">
           Desarrollador Web Full Stack.
         </span>
-        <span class="text-purple-400/90">  
+        <span class="dark:text-purple-400/90 text-purple-600/90">  
           De Galicia, España.</span>
       </h2>
 
-      <nav class="flex flex-wrap gap-4 mt-8 text-white">
+      <nav class="flex flex-wrap gap-4 mt-8 dark:text-white text-black">
         <SocialPill href="https://www.github.com/davidvillard">
           <GitHubIcon class="size-4 md:size-6" />
           GitHub

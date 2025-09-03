@@ -22,12 +22,12 @@ const { title, description, link, date } = Astro.props;
         </div>
       </div>
       <div class="mt-[-4px] flex flex-col gap-2">
-        <p class="text-base text-gray-400">
+        <p class="text-base dark:text-gray-400 text-gray-500">
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-white hover:underline transition-all ease"
+            class="dark:hover:text-white hover:text-black hover:underline transition-all ease"
           >
             {title}
           </a>
