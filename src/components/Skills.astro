@@ -1,8 +1,176 @@
 ---
-import SkillsCard from './SkillsCard.astro'
+import SkillsIcon from "../components/icons/SkillsIcon.astro";
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import React from "./icons/React.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import PHP from "./icons/PHP.astro";
+import Python from "./icons/Python.astro";
+import Django from "./icons/Django.astro";
+import Java from "./icons/Java.astro";
+import MySQL from "./icons/MySQL.astro";
+import Docker from "./icons/Docker.astro";
+import Git from "./icons/Git.astro";
+import VSCode from "./icons/VSCode.astro";
+import Wordpress from "./icons/Wordpress.astro";
+
+const skills = [
+  { name: "HTML5", category: "Frontend", icon: HTML },
+  { name: "CSS3", category: "Frontend", icon: CSS },
+  { name: "JavaScript", category: "Frontend", icon: JavaScript },
+  { name: "React", category: "Frontend", icon: React },
+  { name: "Tailwind CSS", category: "Frontend", icon: Tailwind },
+  { name: "Astro", category: "Frontend", icon: AstroIcon },
+  { name: "PHP", category: "Backend", icon: PHP },
+  { name: "Python", category: "Backend", icon: Python },
+  { name: "Django", category: "Backend", icon: Django },
+  { name: "Java", category: "Backend", icon: Java },
+  { name: "MySQL", category: "Database", icon: MySQL },
+  { name: "Docker", category: "DevOps", icon: Docker },
+  { name: "Git", category: "Tools", icon: Git },
+  { name: "WordPress", category: "CMS", icon: Wordpress },
+  { name: "VS Code", category: "Tools", icon: VSCode },
+];
+
+const categories = [
+  { name: "Todas", value: "all" },
+  { name: "Frontend", value: "Frontend" },
+  { name: "Backend", value: "Backend" },
+  { name: "Database", value: "Database" },
+  { name: "DevOps", value: "DevOps" },
+  { name: "Tools", value: "Tools" },
+  { name: "CMS", value: "CMS" },
+];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mt-12">
-  <SkillsCard />
-</div>
+<section id="skills" class="py-24 md:py-0 px-6 md:px-8">
+  <div class="mx-auto max-w-6xl">
+    <!-- Título de sección -->
+    <div class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center gap-3 mb-4">
+        <SkillsIcon class="size-6 md:size-12 dark:text-white text-gray-900" />
+        <h2
+          class="text-3xl md:text-5xl font-semibold tracking-tight dark:text-white text-gray-900"
+        >
+          Skills
+        </h2>
+      </div>
+      <p class="text-base md:text-lg dark:text-gray-400 text-gray-600 mt-2">
+        Tecnologías y herramientas que utilizo en mi día a día
+      </p>
+    </div>
 
+    <!-- Filtros -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      {
+        categories.map((cat, index) => (
+          <button
+            class={`filter-btn px-4 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium rounded-full border transition-all duration-200 ${
+              index === 0
+                ? "active bg-purple-500 text-white border-purple-500"
+                : "dark:bg-white/5 bg-black/5 dark:text-gray-300 text-gray-700 dark:border-white/10 border-black/10 dark:hover:bg-white/10 hover:bg-black/10"
+            }`}
+            data-filter={cat.value}
+          >
+            {cat.name}
+          </button>
+        ))
+      }
+    </div>
+
+    <!-- Grid de Skills -->
+    <div
+      class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+    >
+      {
+        skills.map((skill) => (
+          <div
+            class="skill-card group flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            data-category={skill.category}
+          >
+            <div class="skill-icon mb-4 transition-transform duration-300 group-hover:scale-110">
+              <skill.icon class="w-12 h-12 md:w-16 md:h-16" />
+            </div>
+            <h3 class="skill-name text-sm md:text-base font-semibold dark:text-white text-gray-900 text-center mb-1">
+              {skill.name}
+            </h3>
+            <span class="skill-category text-xs font-medium text-purple-500 dark:text-purple-400 uppercase tracking-wide">
+              {skill.category}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .filter-btn.active {
+    background: rgb(168 85 247);
+    color: white;
+    border-color: rgb(168 85 247);
+  }
+
+  .skill-card {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .skill-card.hidden {
+    display:none;
+  }
+</style>
+
+<script>
+  const filterBtns =
+    document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const skillCards = document.querySelectorAll<HTMLElement>(".skill-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
+
+      // Actualizar botones activos
+      filterBtns.forEach((b) => {
+        b.classList.remove("active");
+        b.classList.add(
+          "dark:bg-white/5",
+          "bg-black/5",
+          "dark:text-gray-300",
+          "text-gray-700",
+          "dark:border-white/10",
+          "border-black/10"
+        );
+        b.classList.remove("bg-purple-500", "text-white", "border-purple-500");
+      });
+
+      btn.classList.add(
+        "active",
+        "bg-purple-500",
+        "text-white",
+        "border-purple-500"
+      );
+      btn.classList.remove(
+        "dark:bg-white/5",
+        "bg-black/5",
+        "dark:text-gray-300",
+        "text-gray-700",
+        "dark:border-white/10",
+        "border-black/10"
+      );
+
+      // Filtrar cards
+      skillCards.forEach((card) => {
+        const category = card.dataset.category;
+
+        if (filter === "all" || category === filter) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>

@@ -1,24 +1,26 @@
 ---
+// Projects.astro
 import HTML from "./icons/HTML.astro";
 import CSS from "./icons/CSS.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import React from "./icons/React.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import PHP from "./icons/PHP.astro";
-import ProjectCard from "./ProjectCard.astro";
+import ProjectIcon from "../components/icons/ProjectIcon.astro";
+import GitHubIcon from "./icons/GitHub.astro";
 
 const TAGS = {
-  HTML: { name: "HTML", class: "bg-orange-700/30 text-white", icon: HTML },
-  CSS: { name: "CSS", class: "bg-blue-700/30 text-white", icon: CSS },
-  JAVASCRIPT: { name: "JavaScript", class: "bg-yellow-400/30 text-white", icon: JavaScript },
-  REACT: { name: "React", class: "bg-blue-400/30 text-white", icon: React },
-  TAILWIND: { name: "Tailwind", class: "bg-cyan-400/30 text-white", icon: Tailwind },
-  PHP: { name: "PHP", class: "bg-indigo-500/30 text-white", icon: PHP },
+  HTML: { name: "HTML", class: "bg-orange-500/10 text-orange-500 dark:bg-orange-500/20 dark:text-orange-400", icon: HTML },
+  CSS: { name: "CSS", class: "bg-blue-500/10 text-blue-500 dark:bg-blue-500/20 dark:text-blue-400", icon: CSS },
+  JAVASCRIPT: { name: "JavaScript", class: "bg-yellow-500/10 text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400", icon: JavaScript },
+  REACT: { name: "React", class: "bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-400", icon: React },
+  TAILWIND: { name: "Tailwind", class: "bg-sky-500/10 text-sky-600 dark:bg-sky-500/20 dark:text-sky-400", icon: Tailwind },
+  PHP: { name: "PHP", class: "bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-400", icon: PHP },
 };
 
 const PROJECTS = [
   {
-    title: "Interstellar Fan Page - Proyecto Web",
+    title: "Interstellar Fan Page",
     description:
       "Fan Page dedicada a la película Interstellar. Proyecto de Diseño Web Responsive, con varias páginas y diseño adaptable.",
     link: "https://interstellarfanpage.netlify.app",
@@ -27,7 +29,7 @@ const PROJECTS = [
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND],
   },
   {
-    title: "Gestión de horarios y módulos para profesores",
+    title: "Gestión de Horarios",
     description:
       "Plataforma para que los profesores creen y consulten sus horarios, con personalización por módulos y carga docente.",
     link: "https://github.com/sempereluismi/modular",
@@ -36,7 +38,7 @@ const PROJECTS = [
     tags: [TAGS.REACT, TAGS.PHP, TAGS.TAILWIND, TAGS.JAVASCRIPT],
   },
   {
-    title: "StackHub – Recursos de Diseño y Desarrollo Web",
+    title: "StackHub",
     description:
       "Repositorio de recursos y herramientas para diseñadores y desarrolladores web, incluyendo iconos, fuentes, paletas de colores y más.",
     link: "https://stackhub.netlify.app/",
@@ -47,9 +49,84 @@ const PROJECTS = [
 ];
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-8 justify-items-center w-full">
-  {PROJECTS.map((p) => (
-    <ProjectCard {...p} />
-  ))}
-</div>
+<section id="proyectos" class="py-24 md:py-32 px-6 md:px-8">
+  <div class="mx-auto max-w-6xl">
+    <!-- Título de sección -->
+    <div class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center gap-3 mb-4">
+        <ProjectIcon class="size-6 md:size-12 dark:text-white text-gray-900" />
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight dark:text-white text-gray-900">
+          Proyectos
+        </h2>
+      </div>
+    </div>
 
+    <!-- Grid de proyectos -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+      {PROJECTS.map((project) => (
+        <article class="group flex flex-col rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <!-- Imagen -->
+          <a 
+            href={project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="block overflow-hidden"
+          >
+            <img
+              class="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
+              src={project.image}
+              alt={`Captura de ${project.title}`}
+              loading="lazy"
+            />
+          </a>
+
+          <!-- Contenido -->
+          <div class="flex flex-col flex-1 p-8 lg:p-10">
+            <!-- Header con título y GitHub -->
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h3 class="text-2xl md:text-3xl font-semibold dark:text-white text-gray-900 leading-tight">
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-200"
+                >
+                  {project.title}
+                </a>
+              </h3>
+              
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver código en GitHub"
+                  class="flex-shrink-0 p-2.5 rounded-full dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 transition-colors duration-200"
+                >
+                  <GitHubIcon class="size-6 dark:text-gray-400 text-gray-600" />
+                </a>
+              )}
+            </div>
+
+            <!-- Descripción -->
+            <p class="text-base md:text-lg dark:text-gray-400 text-gray-600 leading-relaxed mb-6 flex-1">
+              {project.description}
+            </p>
+
+            <!-- Tags -->
+            <ul class="flex flex-wrap gap-2.5">
+              {project.tags.map((tag) => (
+                <li>
+                  <span class={`inline-flex items-center gap-2 rounded-full text-sm font-medium ${tag.class} py-2 px-4`}>
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
