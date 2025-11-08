@@ -1,12 +1,11 @@
 # Portfolio - David Villar Durán
 
-Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como desarrollador web. Este proyecto fue creado con **Astro** y **Tailwind CSS**, y también incluye algo de **JavaScript**. El portafolio es totalmente responsive y refleja mi aprendizaje continuo en tecnologías web.
+Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como desarrollador web. Este proyecto fue creado con **Astro** y **Tailwind CSS**, y también incluye **JavaScript**. El portafolio es totalmente responsive y refleja mi aprendizaje continuo en tecnologías web.
 
 <br>
 
-![100shots_so](https://github.com/davidvillard/porfolio-davidvillard/blob/main/public/projects/Image_Portfolio.png)
+![Portfolio Preview](https://github.com/davidvillard/porfolio-davidvillard/blob/main/public/projects/Image_Portfolio.png)
 
-<br>
 <br>
 
 ## 📋 Descripción
@@ -14,61 +13,82 @@ Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como
 Este portafolio está diseñado para destacar mi experiencia y proyectos en desarrollo web. A través de este proyecto, aprendí y apliqué **Astro** junto con **Tailwind CSS** para crear una interfaz moderna, eficiente y adaptable a diferentes dispositivos.
 
 <br>
+
+## 🛠️ Stack Tecnológico
+
+### Tecnologías principales
+- **Astro** - Generador de sitios estáticos para mejor rendimiento
+- **Tailwind CSS** - Framework CSS basado en utilidades
+- **JavaScript** - Para funcionalidades interactivas
+- **HTML5 y CSS3** - Estructura y estilos
+
+### Herramientas de desarrollo
+- **Git** - Control de versiones
+- **VS Code** - Editor de código
+- **npm** - Gestor de paquetes
+- **Netlify** - Plataforma de despliegue
+
+### Habilidades adicionales
+- **React**
+- **Vue.js**
+- **Python**
+- **Django**
+- **PHP**
+- **Java**
+- **Docker**
+- **MySQL**
+- **WordPress**
+- **Bootstrap**
+
 <br>
 
-### 🔧 Tecnologías Utilizadas
+## 🚀 Características
 
-- **Astro**: Framework estático rápido y optimizado.
-- **Tailwind CSS**: Estilos para un diseño rápido y personalizado.
-- **JavaScript**: Para la funcionalidad interactiva en el sitio.
-- **HTML5** y **CSS3**: Estructura y presentación del contenido.
-  
-<br>
-<br>
-
-## 🚀 Funcionalidades
-
-- **Responsive Design**: Totalmente adaptable a dispositivos móviles, tabletas y desktops.
-- **Optimización de rendimiento**: Aprovechando el enfoque estático de Astro para tiempos de carga rápidos.
-- **Tailwind CSS**: Diseño eficiente y escalable.
-- **Interactividad**: Uso de JavaScript para pequeñas interacciones y dinámicas en el sitio.
+- **Diseño Responsive**: Totalmente adaptable a móviles, tablets y escritorio
+- **Optimización de Rendimiento**: Aprovechando Astro para cargas rápidas
+- **Interfaz Moderna**: Diseño limpio e intuitivo usando Tailwind CSS
+- **Elementos Interactivos**: Funcionalidades dinámicas con JavaScript
+- **Showcase de Proyectos**: Destacando mis mejores trabajos
+- **Sección de Habilidades**: Visión completa de capacidades técnicas
+- **Experiencia Profesional**: Historial laboral detallado y logros
 
 <br>
-<br>
 
-## 🌱 Lo que aprendí
+## 🌱 Aprendizajes
 
-- **Astro**: Construir sitios web estáticos rápidos y optimizados.
-- **Tailwind CSS**: Cómo crear un diseño completamente responsive de manera rápida y eficiente.
-- **Desarrollo Frontend**: Fortalecimiento de habilidades en HTML, CSS y JavaScript.
+- Dominio de Astro para construir sitios web optimizados
+- Implementación eficiente de diseños responsive con Tailwind CSS
+- Mejora de habilidades frontend en HTML, CSS y JavaScript
+- Experiencia en flujos de trabajo de desarrollo web moderno
+- Mejora en documentación y organización de proyectos
 
-<br>
 <br>
 
 ## 🌐 Despliegue
 
-Este portafolio ha sido desplegado en **Netlify**, lo que permite un acceso rápido y fácil a la versión en línea. Netlify ofrece una integración continua y despliegue automático cada vez que realizo cambios en el repositorio.
+Este portafolio está desplegado en **Netlify**, permitiendo un acceso rápido a la versión online. La configuración incluye integración continua y despliegue automático con cada actualización del repositorio.
 
-<br>
 <br>
 
 ## 📬 Contacto
 
-Si te gustaría conocer más sobre mí o colaborar en algún proyecto, puedes contactarme a través de [Email](mailto:davidvillard6@gmail.com)
- o [LinkedIn](https://www.linkedin.com/in/davidvillard/) y [Instagram](https://www.instagram.com/davidvillardd/).
+No dudes en contactarme para colaboraciones u oportunidades:
+
+- 📧 Email: [davidvillard6@gmail.com](mailto:davidvillard6@gmail.com)
+- 💼 LinkedIn: [davidvillard](https://www.linkedin.com/in/davidvillard/)
+- 📸 Instagram: [davidvillardd](https://www.instagram.com/davidvillardd/)
 
 <br>
-<br>
 
-## 🧞 Commands
+## 🧞 Comandos
 
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto, en una terminal:
 
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia servidor local en `localhost:4321`        |
+| `npm run build`           | Construye el sitio para producción en `./dist/`  |
+| `npm run preview`         | Previsualiza la build localmente                 |
+| `npm run astro ...`       | Ejecuta comandos CLI como `astro add`, `astro check` |
+| `npm run astro -- --help` | Obtiene ayuda sobre el CLI de Astro             |
