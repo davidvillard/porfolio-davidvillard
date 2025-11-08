@@ -71,10 +71,9 @@ import UserIcon from "../components/icons/UserIcon.astro";
         </div>
 
         <!-- Stats o highlights opcionales -->
-        <div
-          class="grid grid-cols-3 gap-4 pt-6 border-t dark:border-white/10 border-gray-200"
-        >
-          <div>
+        <div class="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-6 border-t dark:border-white/10 border-gray-200">
+          <!-- Stats -->
+          <div class="text-center sm:text-left">
             <p class="text-2xl font-semibold dark:text-white text-gray-900">
               3+
             </p>
@@ -82,20 +81,23 @@ import UserIcon from "../components/icons/UserIcon.astro";
               Años programando
             </p>
           </div>
-          <div>
-              <p class="text-2xl font-semibold dark:text-white text-gray-900">
-                  ∞
-                </p>
-                <p class="text-sm dark:text-gray-400 text-gray-600">Curiosidad</p>
-            </div>
-            <div class="pt-6 border-t dark:border-white/10 border-gray-200">
-              <blockquote class="italic dark:text-gray-400 text-gray-600">
-                "No tengo ni idea’ es una respuesta válida, no tengas miedo de decirlo"
-              </blockquote>
-              <p class="text-sm dark:text-gray-500 text-gray-500 mt-1">
-                — Senior Developer Advice
-              </p>
-            </div>
+          
+          <div class="text-center sm:text-left">
+            <p class="text-2xl font-semibold dark:text-white text-gray-900">
+              ∞
+            </p>
+            <p class="text-sm dark:text-gray-400 text-gray-600">Curiosidad</p>
+          </div>
+
+          <!-- Cita -->
+          <div class="text-center sm:text-left border-t sm:border-t-0 dark:border-white/10 border-gray-200 pt-6 sm:pt-0 mt-4 sm:mt-0">
+            <blockquote class="italic dark:text-gray-400 text-gray-600">
+              "No tengo ni idea' es una respuesta válida, no tengas miedo de decirlo"
+            </blockquote>
+            <p class="text-sm dark:text-gray-500 text-gray-500 mt-1">
+              — Senior Developer Advice
+            </p>
+          </div>
         </div>
       </div>
 
