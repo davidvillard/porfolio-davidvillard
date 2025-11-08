@@ -4,7 +4,7 @@ Bienvenido a mi portafolio personal, donde muestro mi trabajo y habilidades como
 
 <br>
 
-![100shots_so](https://github.com/davidvillard/porfolio-davidvillard/blob/main/public/projects/Portfolio-Github.png)
+![100shots_so](https://github.com/davidvillard/porfolio-davidvillard/blob/main/public/projects/Image_Portfolio.png)
 
 <br>
 <br>
