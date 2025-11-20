@@ -93,37 +93,29 @@
           </svg>
           davidvillard6@gmail.com
         </a>
+      </nav>
+
+      <!-- CV Download and Contact Button -->
+      <nav class="flex justify-center gap-4 mt-6">
+        <a
+          href="/CV_David_Villar_Durán_Desarrollador_Web.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full px-5 py-2 bg-purple-600 text-white hover:scale-105 transition"
+        >
+          Descargar CV
+        </a>
 
         <button
           id="copyButton"
-          type="button"
-          class="copy rounded-full border dark:border-white/10 border-black/10 flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base dark:bg-gray-500/70 bg-gray-400/70 hover:scale-105 hover:bg-purple-500/70 transition"
+          class="copy rounded-full px-4 py-2 bg-black/5 dark:bg-white/5"
         >
+          <span>Contactar</span>
           <span
-            data-text-end="Copied!"
-            data-text-initial="Copy to clipboard"
-            class="tooltip"></span>
-          <svg
-            class="size-4 md:size-6"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
-            ></path>
-            <path
-              d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-            ></path>
-          </svg>
-          Copy
+            class="tooltip"
+            data-text-initial="Copiar email"
+            data-text-end="Copiado!"
+          ></span>
         </button>
       </nav>
     </div>
@@ -225,38 +217,23 @@
 </style>
 
 <script>
-  let copyTimeout: number | undefined;
+  let copyTimeout;
 
   const copyButton = document.getElementById("copyButton");
 
   if (copyButton) {
-    copyButton.addEventListener("mousedown", function () {
+    copyButton.addEventListener("click", async function () {
       const emailToCopy = "davidvillard6@gmail.com";
-
-      const tempInput = document.createElement("input");
-      tempInput.value = emailToCopy;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-
-      if (copyTimeout) {
-        clearTimeout(copyTimeout);
-      }
-
-      copyTimeout = setTimeout(function () {
-        const tooltip = document.querySelector(
-          ".copy .tooltip"
-        ) as HTMLElement | null;
-        if (tooltip) {
-          tooltip.innerText = "";
-        }
-      }, 1500);
-    });
-
-    copyButton.addEventListener("mouseup", function () {
-      if (copyTimeout) {
-        clearTimeout(copyTimeout);
+      try {
+        await navigator.clipboard.writeText(emailToCopy);
+        const tooltip = copyButton.querySelector(".tooltip");
+        tooltip.setAttribute("data-text-initial", "¡Copiado!");
+        if (copyTimeout) clearTimeout(copyTimeout);
+        copyTimeout = setTimeout(() => {
+          tooltip.setAttribute("data-text-initial", "Copiar email");
+        }, 1500);
+      } catch (err) {
+        console.error("No se pudo copiar al portapapeles", err);
       }
     });
   }

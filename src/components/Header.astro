@@ -60,16 +60,17 @@
   const menuIcon = document.getElementById('menu-icon');
 
   if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
     mobileMenuToggle.addEventListener('click', function () {
-      mobileMenu.classList.toggle('hidden'); // Alterna la visibilidad del menú
-
-      // Cambia el icono al hacer clic
+      mobileMenu.classList.toggle('hidden');
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      // Cambiar icono
       if (menuIcon) {
-        if (mobileMenu.classList.contains('hidden')) {
-          menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>'; // Icono de menú
-        } else {
-          menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'; // Icono de "X"
-        }
+        menuIcon.innerHTML = isOpen
+          ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+          : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
       }
     });
   }
